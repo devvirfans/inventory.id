@@ -10,106 +10,37 @@ if (isset($_SESSION["username"])) {
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Dashboard</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .sidebar {
-      width: 200px;
-      background: #f2f2f2;
-      padding: 20px;
-    }
-
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar li {
-      margin-bottom: 10px;
-    }
-
-    .sidebar li a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .content {
-
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dashboard</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .sidebar {
-      width: 200px;
-      background: #f2f2f2;
-      padding: 20px;
-    }
-
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar li {
-      margin-bottom: 10px;
-    }
-
-    .sidebar li a {
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .content {
-      flex: 1;
-      padding: 20px;
-    }
-
-    .top-right {
-      text-align: right;
-    }
-
-    .top-right a {
-      text-decoration: none;
-      background-color: #f2f2f2;
-      color: #333;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="dashboard.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 </head>
 <body>
-  <div class="sidebar">
-    <ul>
-      <li><a href="#" style="font-weight: bold;">Dashboard</a></li>
-      <li><a href="#">Inventory</a></li>
-      <li><a href="#">Profile</a></li>
-    </ul>
-  </div>
+<div class="sidebar">
+  <ul>
+    <li><div class="logo"><img src="Elements/logo.png" alt="Logo"></div></li>
+    <li><a href="#" style="font-size: 32px">Inventory.id</a></li>
+    <li><a href="#" class="dashboard">Dashboard</a></li>
+    <li><a href="#" class="inventory">Inventory</a></li>
+    <li><a href="#" class="profile">Profile</a></li>
+  </ul>
+</div>
+
+
+  
   <div class="content">
     <div class="top-right">
-      <a href="#"><?php echo $_SESSION['username']; ?></a>
+      <a href="#"><?php echo $_SESSION['username'];?></a>
     </div>
-    <h2>Welcome to the Dashboard</h2>
-    <!-- Add your dashboard content here -->
+    <div class="middle">
+      <div class="box box-1"></div>
+      <div class="box box-2"></div>
+      <div class="box box-3"></div>
+      <div class="box box-4"></div>
+    </div>
   </div>
 </body>
 </html>
+

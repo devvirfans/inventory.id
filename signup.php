@@ -1,16 +1,11 @@
 <?php
 require 'connection.php';
 
-// Process the form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Retrieve the form data
   $username = $_POST["username"];
   $password = $_POST["password"];
   $email = $_POST["email"];
 
-  // Perform any necessary validation or sanitization on the form data
-
-  // Check if the username or email already exists
   $sql = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
   $result = $conn->query($sql);
 
