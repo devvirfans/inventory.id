@@ -32,7 +32,7 @@ if (isset($_SESSION["username"])) {
   
   <div class="content">
     <div class="top-right">
-      <a href="#"><?php echo $_SESSION['username'];?></a>
+      <a href="profile.php"><?php echo $_SESSION['username'];?></a>
     </div>
     <div class="middle">
       <div class="box box-1"></div>
