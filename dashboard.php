@@ -1,4 +1,5 @@
 <?php
+include('connection.php');
 session_start();
 
 // Check if the session variable exists and display the username
