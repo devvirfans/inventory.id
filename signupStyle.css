@@ -1,0 +1,202 @@
+html,
+body {
+    height: 100%;
+    background-color: #f7f7f7 !important;
+}
+
+.logopict{
+    background-image: url("logo.png");
+    height: 248px;
+    width: 277px;
+    top: 179px;
+    left: 581px;
+    opacity: 1;
+    position: absolute;
+
+}
+
+.logoname{
+    width: 546px;
+    color: #000;
+    position: relative;
+    top: 230px;
+    left: 862px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 96px;
+    opacity: 1;
+}
+
+.box{
+    width: 900px;
+    height: 500px;
+    background: #fff;
+    opacity: 1;
+    position: absolute;
+    top: 500px;
+    left: 520px;
+    border: 1px solid #c8cbc4;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    
+}
+
+.signupA{
+    width: 125px;
+    color: #000;
+    position: absolute;
+    top: 525px;
+    left: 907.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: Bold;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+}
+
+.usn{
+    width: 91px;
+    color: #000;
+    position: absolute;
+    top: 575px;
+    left: 730px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: Light;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+.lineUsn{
+    width: 500px;
+    height: 2px;
+    background: rgba(242,242,242,1);
+    opacity: 1;
+    position: absolute;
+    top: 650px;
+    left: 720px;
+    border: 1px solid #c8cbc4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+}
+
+.email{
+    width: 91px;
+    color: #000;
+    position: absolute;
+    top: 675px;
+    left: 730px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: Light;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+.lineEmail{
+    width: 500px;
+    height: 2px;
+    background: rgba(242,242,242,1);
+    opacity: 1;
+    position: absolute;
+    top: 750px;
+    left: 720px;
+    border: 1px solid #c8cbc4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+}
+
+.pw{
+    width: 91px;
+    color: #000;
+    position: absolute;
+    top: 775px;
+    left: 730px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: Light;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+.linePw{
+    width: 500px;
+    height: 2px;
+    background: rgba(242,242,242,1);
+    opacity: 1;
+    position: absolute;
+    top: 850px;
+    left: 720px;
+    border: 1px solid #c8cbc4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+}
+
+.boxsignupB{
+    width: 500px;
+    height: 50px;
+    opacity: 1;
+    position: absolute;
+    top: 870px;
+    left: 720px;
+    background-color: #ada8a5 !important;
+    border: 1px solid #ada8a5;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.signupB{
+    width: 125px;
+    color: #000;
+    position: absolute;
+    top: 875px;
+    left: 907.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+    opacity: 1;
+    text-align: center;
+}
+
+
+.switch{
+    width: 288px;
+    color: #000;
+    position: absolute;
+    top: 940px;
+    left: 820px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+}
+
+.switch2{
+    width: 91px;
+    color: #000;
+    position: absolute;
+    top: 940px;
+    left: 1052.5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 1;
+    text-align: left;
+}
+
+
+
+
+
