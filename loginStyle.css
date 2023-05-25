@@ -1,0 +1,118 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif; /* Updated font-family */;
+}
+
+body{
+    background-image:url("assets/bg1.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+
+center{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container1{
+    box-sizing:border-box;
+    position:relative;
+    top:65px;
+    width:370px;
+    height:450px;
+    border:1px dotted #1f212348;
+    border-radius:10px;
+    padding:10px;
+    font-size:13px;
+
+    background: #F1EDE6;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container1:hover{
+    background:#d9d9d9;
+    border:none;
+    border-radius:10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container1 h1{
+margin: 20px;
+text-align: center;
+font-weight: bolder;
+color:#322d29;
+}
+
+.container1 hr{
+border-top: 3px solid #CBAD8D;
+width: 200px;
+}
+
+.container1 h2{
+text-align: center;
+color:#322d29;
+margin: 15px;
+}
+
+.box{
+    box-sizing: border-box;
+    position: relative;
+    top: 5px;
+    width: 210px;
+    height: 40px;
+    outline:none;
+    border:1px solid #72383d;
+    border-radius:10px;
+    margin:10px 5px;
+    padding: 10px;
+    
+
+}
+.box:hover{
+        border:1.2px solid #72383d;
+        box-shadow:0 7px 7px 0 #1f212348, 0 10px 10px 0 #1f212348;
+}
+
+.box:focus{
+    border-top:none;
+    border-left:none;
+    border-bottom:3px solid #72383d;
+    border-right:none;
+    border-radius:5px;
+    transition-duration:0.2s;
+    transition-timing-function:ease-out;
+}
+
+.loginbtn{
+    box-sizing: border-box;
+    position: relative;
+    top: 15px;
+    width:100px;
+    height:30px;
+    background:#CBAD8D;
+    border:1px solid #72383d;
+    border-radius:10px;
+    outline:none;
+    margin:10px 5px;
+
+            
+}
+
+.loginbtn:hover{
+    background:#72383d;
+    border:1.2px solid #72383d;
+    color:white;
+    font-weight:bold;
+    box-shadow:0 5px 5px 0 #1f212348, 0 7px 7px 0 #1f212348;
+}
+
+.container1 p {
+text-align: center;
+margin: 30px;
+}
+
+
+
