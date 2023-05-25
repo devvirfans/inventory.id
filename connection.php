@@ -1,11 +1,11 @@
 <?php
-$servername = "localhost";  // replace with your server name if different
-$username = "root";         // replace with your MySQL username
-$password = "";             // replace with your MySQL password
-$database = "inventory.id";  // replace with the name of your database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "inventory.id";
 
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $database);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
