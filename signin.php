@@ -1,31 +1,3 @@
-<?php
-session_start();
-require 'connection.php';
-
-// Process the form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  // Retrieve the form data
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-
-  // Perform any necessary validation or sanitization on the form data
-
-  // Check if the user credentials are valid
-  $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-    // User credentials are valid
-    $_SESSION["username"] = $username; // Set the session variable
-    header("Location: dashboard.php");
-    exit;
-  } else {
-    // Invalid user credentials, display error message
-    $error = "Invalid username or password.";
-  }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
