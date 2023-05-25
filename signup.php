@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="Signup">
             <form action="">
                 <h1> Inventory.id</h1>
-                <hr>
+                <hr></hr>
                 <p>Sign Up</p>
                 <label for="">Username</label>
                 <input type="usn" placeholder="Username">
@@ -55,12 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button>Sign Up</button>
                 <p>Already have an account?</p>
                 <p>
-                    <a href="#">Login</a>
+                    <a href="signin.php">Login</a>
                 </p>
             </form>
         </div>
         <div class="right">
-            <img src="inventory.jpg" alt="">
+            <img src="assets/inventory.jpg" alt="inventory.jpg">
         </div>
     </div>
 </body>

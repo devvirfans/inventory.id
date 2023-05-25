@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Updated font-family */
 }
 
 body {
@@ -17,7 +17,7 @@ body {
     width: 100%;
     display: flex;
     max-width: 850px;
-    background: #e3ded0;
+    background: #f6f2e8;
     border-radius: 15px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
@@ -38,7 +38,7 @@ h1 {
 }
 
 hr {
-    border-top: 3px solid #f6f2e8;
+    border-top: 3px solid #e3ded0;
 }
 
 p {

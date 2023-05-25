@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Updated font-family */
 }
 
 body {
@@ -86,7 +86,6 @@ button {
 button:hover {
     background: #ada8a5;
 }
-
 
 @media (max-width: 880px) {
     .container {

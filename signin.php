@@ -35,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
     <link rel="stylesheet" href="signinStyle.css">
+    <link href="path/to/roboto.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,12 +53,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button>Login</button>
                 <p>Don't have an account?</p>
                 <p>
-                    <a href="#">Sign Up</a>
+                    <a href="signup.php">Sign Up</a>
                 </p>
             </form>
         </div>
         <div class="right">
-            <img src="inventory.jpg" alt="">
+            <img src="assets/inventory.jpg" alt="inventory.jpg">
         </div>
     </div>
 </body>
