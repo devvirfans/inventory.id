@@ -1,0 +1,190 @@
+body{
+  margin: 0;
+}
+
+.store{
+  background-color: aqua;
+}
+
+.hello{
+  background-color: aquamarine;
+}
+
+.nav ul{
+
+}
+
+.card-body{
+  border-radius: 20px;
+  padding: 50px 50px;
+  margin: 0 10%;
+  background-color: #FFFFFF;
+  height: 75vh;
+}
+
+.store-dropdown-container{
+  padding:0 ;
+
+}
+
+.card{
+ background-image: url(./public/external/bg.png);
+}
+
+*{
+  padding: 0;
+  top: 0;
+}
+
+html{
+  display: block;
+}
+
+.store-title{
+  background-color: #78C6FF;
+}
+
+.store-name{
+  background-color: #A4D8FF;
+}
+
+
+
+.inventory-container {
+  width: 100%;
+  /* display: flex;
+  overflow: auto; */
+  /* min-height: 100vh; */
+  align-items: center;
+  flex-direction: column;
+}
+.inventory-inventory-system {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-image: url("./public/external/bg2.png");
+}
+.inventory-heading {
+  top: 0px;
+  left: 176px;
+  width: 1586px;
+  height: 128px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.inventory-logo {
+  top: 47px;
+  left: 6px;
+  width: 301px;
+  height: 55px;
+  position: absolute;
+}
+.inventory-text {
+  top: 64px;
+  left: 423px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.inventory-text2 {
+  top: 64px;
+  left: 536px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Bold;
+  text-align: right;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.inventory-text4 {
+  top: 64px;
+  left: 689px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.inventory-text6 {
+  top: 64px;
+  left: 1502px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Regular;
+  text-align: right;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.store-title-row th{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+}
+.store-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+}
+.store-body{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 28px;
+}
+.store-title{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 28px;
+}
+.add-item-row{
+  color: #000745;
+}
+.add-store-row{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.store-dropdown-container {
+  padding-left: 28px; /* Adjust the padding as needed */
+}

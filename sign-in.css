@@ -1,0 +1,334 @@
+.sign-in-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.sign-in-sign-in {
+  width: 100%;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-image: linear-gradient(-60deg, rgba(88, 184, 255, 1) 0%, rgba(239, 248, 255, 1) 100%, rgba(255, 255, 255, 1) 100%);
+}
+.sign-in-sign-inlogo {
+  top: 0px;
+  left: 679px;
+  width: 1241px;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.sign-in-logo {
+  top: 476px;
+  left: 273px;
+  width: 696px;
+  height: 127px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-in-group52 {
+  top: 2px;
+  left: 0px;
+  width: 125px;
+  height: 125px;
+  position: absolute;
+}
+.sign-in-text {
+  left: 150px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 96px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Roboto Slab;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-in-wave {
+  top: 623.8991088867188px;
+  left: -43.83732604980469px;
+  width: 1445px;
+  height: 607.1328125px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-in-rectangle35 {
+  top: 0px;
+  left: 0px;
+  width: 1445px;
+  height: 451px;
+  position: absolute;
+}
+.sign-in-rectangle32 {
+  top: 39.592539730157455px;
+  left: -2.660959266940395px;
+  width: 1445px;
+  height: 451px;
+  position: absolute;
+}
+.sign-in-rectangle34 {
+  top: 39.592539730157455px;
+  left: -2.660959266940395px;
+  width: 1445px;
+  height: 451px;
+  position: absolute;
+}
+.sign-in-rectangle29 {
+  top: 78.19532415213985px;
+  left: -5.255383542426642px;
+  width: 1445px;
+  height: 451px;
+  position: absolute;
+}
+.sign-in-rectangle31 {
+  top: 115.80820336061947px;
+  left: -7.783284677767938px;
+  width: 1445px;
+  height: 451px;
+  position: absolute;
+}
+.sign-in-rectangle33 {
+  top: 155.4008156295372px;
+  left: -10.444245492101814px;
+  width: 1445px;
+  height: 451px;
+  position: absolute;
+}
+.sign-in-sign-insection {
+  top: 0px;
+  left: 0px;
+  width: 679px;
+  height: 1080px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.sign-in-sign-inframe {
+  top: 0px;
+  left: 0px;
+  width: 679px;
+  height: 1080px;
+  position: absolute;
+  box-sizing: content-box;
+  border-color: rgba(227, 227, 227, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+.sign-in-sign-infill {
+  top: 344px;
+  left: 124px;
+  width: 430px;
+  height: 392px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-in-username {
+  top: 77px;
+  left: 0px;
+  width: 430px;
+  height: 77px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-in-rectangle8 {
+  top: 77px;
+  left: 0px;
+  width: 430px;
+  height: 2px;
+  position: absolute;
+  box-sizing: content-box;
+  border-color: rgba(239, 239, 239, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.sign-in-text02 {
+  color: rgba(0, 0, 0, 0.28999999165534973);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Light;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-in-username-input {
+  width: 100%;
+  outline: none;
+  align-self: flex-end;
+  border-style: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.sign-in-password {
+  top: 189px;
+  left: 0px;
+  width: 430px;
+  height: 77px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-in-rectangle81 {
+  top: 77px;
+  left: 0px;
+  width: 430px;
+  height: 2px;
+  position: absolute;
+  box-sizing: content-box;
+  border-color: rgba(239, 239, 239, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.sign-in-text04 {
+  color: rgba(0, 0, 0, 0.28999999165534973);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Light;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-in-password-input {
+  width: 100%;
+  outline: none;
+  align-self: flex-end;
+  border-style: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.sign-in-text06 {
+  left: 159px;
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-in-group11 {
+  top: 301px;
+  left: 0px;
+  width: 430px;
+  height: 91px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.sign-in-sign-in-button {
+  display: flex;
+  align-items: flex-start;
+  border-style: none;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.sign-in-rectangle9 {
+  width: 430px;
+  height: 54px;
+  box-sizing: content-box;
+  border-color: rgba(205, 205, 205, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+}
+.sign-in-text08 {
+  top: 16px;
+  left: 0px;
+  color: rgb(0, 0, 0);
+  right: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 32px;
+  font-style: ExtraLight;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 200;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sign-in-text09 {
+  top: 68px;
+  left: 78px;
+  color: rgb(0, 0, 0);
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: ExtraLight;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 200;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-in-text10 {
+  top: 68px;
+  color: rgb(0, 0, 0);
+  right: 82px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: ExtraLight;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.sign-in-text11 {
+  top: 995px;
+  left: 88px;
+  color: rgba(0, 0, 0, 0.30000001192092896);
+  width: 503px;
+  height: auto;
+  position: absolute;
+  font-size: 20px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

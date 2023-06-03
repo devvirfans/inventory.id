@@ -68,7 +68,7 @@
               </span>
             </div>
             <div class="landing-page-frame8">
-              <a href="sign-up.html" class="landing-page-navlink">
+              <a href="sign-up.php" class="landing-page-navlink">
                 <div class="landing-page-get-started-button">
                   <img
                     alt="Box2826"

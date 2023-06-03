@@ -1,109 +1,3 @@
-<?php
-// Include the database connection file
-include 'connection.php';
-
-// Start the session
-session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION['username']) || empty($_SESSION['username'])) {
-  // Redirect to the sign-in page or any other appropriate action
-  header('Location: sign-in.php');
-  exit();
-}
-
-// Retrieve the username from the session
-$username = $_SESSION['username'];
-
-// Retrieve user information from the database
-$query = "SELECT * FROM users WHERE username='$username'";
-$result = mysqli_query($connection, $query);
-
-// Check if the query was successful
-if ($result && mysqli_num_rows($result) > 0) {
-  // Fetch user data
-  $row = mysqli_fetch_assoc($result);
-  $userID = $row['user_id'];
-  $email = $row['email'];
-  $fullName = $row['full_name'];
-  $address = $row['address'];
-  $profile_picture = $row['profile_picture'];
-  
-} else {
-  // Handle the case where user data is not found
-  // Redirect to an appropriate page or display an error message
-  header('Location: error.php');
-  exit();
-}
-
-// Update user information if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Retrieve the new values from the form
-  $newUsername = $_POST['username'];
-  $newEmail = $_POST['email'];
-  $newFullName = $_POST['full_name'];
-  $newAddress = $_POST['address'];
-  $newPassword = $_POST['password'];
-
-  if ($_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
-    // Retrieve the uploaded file details
-    $tmpFilePath = $_FILES['profile_picture']['tmp_name'];
-    $fileSize = $_FILES['profile_picture']['size'];
-    $fileType = $_FILES['profile_picture']['type'];
-
-    // Check the file type (assuming it should be an image)
-    if (strpos($fileType, 'image') !== false) {
-      // Read the contents of the uploaded file
-      $uploadedImage = file_get_contents($tmpFilePath);
-
-      // Update the user's profile picture in the database
-      $updateQuery .= ", profile_picture='" . mysqli_real_escape_string($connection, $uploadedImage) . "'";
-    } else {
-      // Handle the case where the uploaded file is not an image
-      header('Location: error.php');
-      exit();
-    }
-  }
-
-  // Check if username and email are not empty
-  if (!empty($newUsername) && !empty($newEmail)) {
-    // Update the user's information in the database
-    $updateQuery = "UPDATE users SET username='$newUsername', email='$newEmail', full_name='$newFullName', address='$newAddress'";
-
-    // Update the password if provided
-    if (!empty($newPassword)) {
-      $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-      $updateQuery .= ", password='$hashedPassword'";
-    }
-
-    // Append the profile picture update query if a new picture was uploaded
-    if (isset($uploadedImage)) {
-      $updateQuery .= ", profile_picture='" . mysqli_real_escape_string($connection, $uploadedImage) . "'";
-    }
-
-    $updateQuery .= " WHERE user_id='$userID'";
-
-    $updateResult = mysqli_query($connection, $updateQuery);
-
-    if ($updateResult) {
-      // Update successful, redirect to profile page or any other appropriate action
-      header('Location: profile.php');
-      exit();
-    } else {
-      // Update failed, handle the error accordingly
-      header('Location: error.php');
-      exit();
-    }
-  }
-}
-
-// Close the database connection
-mysqli_close($connection);
-?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="english">
   <head>
@@ -150,7 +44,6 @@ mysqli_close($connection);
       data-tag="font"
     />
     <link rel="stylesheet" href="./style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <div>
@@ -164,10 +57,10 @@ mysqli_close($connection);
               src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/900bc753-2190-48f9-8ce1-59acc129f87b/bea0eae2-270e-4b27-8ba7-395b97056ecc?org_if_sml=14475"
               class="profile-logo"
             />
-            <a href="home.php" class="profile-text"><span>Home</span></a>
+            <a href="home.html" class="profile-text"><span>Home</span></a>
             <span class="profile-text02"><span>Inventory</span></span>
             <span class="profile-text04"><span>Profile</span></span>
-            <a href="sign-in.php" class="profile-text06">
+            <a href="sign-in.html" class="profile-text06">
               <span>Log Out</span>
             </a>
           </div>
@@ -194,7 +87,6 @@ mysqli_close($connection);
                 class="profile-wave"
               />
             </div>
-            <form method="POST" action="profile.php" enctype="multipart/form-data">
             <div class="profile-userdetails">
               <div class="profile-username">
                 <img
@@ -208,9 +100,7 @@ mysqli_close($connection);
                 </span>
                 <input
                   type="text"
-                  name="username"
                   placeholder="Username"
-                  value="<?php echo $username; ?>"
                   class="profile-textinput input"
                 />
               </div>
@@ -226,9 +116,7 @@ mysqli_close($connection);
                 </span>
                 <input
                   type="email"
-                  name="email"
                   placeholder="Email"
-                  value="<?php echo $email; ?>"
                   class="profile-textinput1 input"
                 />
               </div>
@@ -241,9 +129,7 @@ mysqli_close($connection);
                 <span class="profile-text14"><span>Full Name</span></span>
                 <input
                   type="text"
-                  name="full_name"
                   placeholder="Full Name"
-                  value="<?php echo $fullName; ?>"
                   class="profile-textinput2 input"
                 />
               </div>
@@ -256,9 +142,7 @@ mysqli_close($connection);
                 <span class="profile-text16"><span>Address</span></span>
                 <input
                   type="text"
-                  name="address"
                   placeholder="Address"
-                  value="<?php echo $address; ?>"
                   class="profile-textinput3 input"
                 />
               </div>
@@ -271,66 +155,43 @@ mysqli_close($connection);
                 <span class="profile-text18"><span>Password</span></span>
                 <input
                   type="password"
-                  name="password"
                   placeholder="Password"
                   class="profile-textinput4 input"
                 />
               </div>
             </div>
-            <div class="profile-apply-changes button" onclick="submitForm()">
+            <div class="profile-apply-changes button">
               <span class="profile-text20">Apply changes</span>
             </div>
-            <div class="profile-revert-changes button" onclick="location.reload()">
+            <div class="profile-revert-changes button">
               <span class="profile-text21"><span>Revert Changes</span></span>
             </div>
-            <!-- ...existing HTML code... -->
-            <div class="profile2-profile-picture">
-              <div class="profile2-frame">
-             
-                <div class="profile2-image-container">
-                  <?php if ($profile_picture): ?>
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($profile_picture); ?>" alt="custom1.png" class="profile2-image" />               
-                    <?php else: ?>
-                      <img src="public\external\default.jpg" alt="default.png" class="profile2-image" />
-                    <?php endif; ?>
-                  <div class="pluss">
-                    <img src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/900bc753-2190-48f9-8ce1-59acc129f87b/b1f1eff7-bd0f-4eca-9cd1-6ef9fbe99587?org_if_sml=11910" class="profile-plus12" id="profile-image">
-                    <input type="file" name="profile_picture" accept=".jpg, .jpeg, .png" placeholder="placeholder" class="profile2-textinput5 input" id="profile-input" style="display: none;">
-                  </div>
-
-                </div>
-               
-
-          
-              <!-- <input
-                  type="file"
-                  name="profile_picture"
-                  placeholder="placeholder"
-                  class="profile2-textinput5 input"
+            <div class="profile-profile-picture">
+              <div class="profile-frame">
+                <img
+                  alt="Ellipse23221"
+                  src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/900bc753-2190-48f9-8ce1-59acc129f87b/598fa4f5-6d7a-492e-a73b-cffc1c114683?org_if_sml=14318"
+                  class="profile-ellipse2"
                 />
-              </div> -->
-              
-          </div>
-            <!-- ...existing HTML code... -->
-            <script>
-                function submitForm() {
-                  // Get the form element
-                  var form = document.querySelector('form');
-                  // Submit the form
-                  form.submit();
-                }
-            </script>
-
-            <script>
-              const profileImage = document.getElementById('profile-image');
-              const profileInput = document.getElementById('profile-input');
-              profileImage.addEventListener('click', () => {
-                profileInput.click();
-              });
-            </script>
-
-
-            </form>
+                <div id="profile" class="profile-maskgroup">
+                  <img
+                    alt="Ellipse13161"
+                    src="public/external/ellipse13161-z5n4-400h.png"
+                    class="profile-ellipse1"
+                  />
+                  <img
+                    alt="Shape3221"
+                    src="public/external/shape3221-h1w.svg"
+                    class="profile-shape"
+                  />
+                  <img
+                    alt="plus123161"
+                    src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/900bc753-2190-48f9-8ce1-59acc129f87b/b1f1eff7-bd0f-4eca-9cd1-6ef9fbe99587?org_if_sml=11910"
+                    class="profile-plus12"
+                  />
+                </div>
+              </div>
+            </div>
             <div class="profile-color-change">
               <img
                 alt="Ellipse83221"

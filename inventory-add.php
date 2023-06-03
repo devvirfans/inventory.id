@@ -154,7 +154,7 @@ mysqli_close($connection);
   </head>
   <body>
     <div>
-      <link href="./profile.css" rel="stylesheet" />
+      <link href="./inventory-add.css" rel="stylesheet" />
 
       <div class="profile-container">
         <div class="profile-profile">
