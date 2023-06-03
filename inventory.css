@@ -1,5 +1,7 @@
 body{
+  height: 100%;
   margin: 0;
+  padding: 0;
 }
 
 .store{
@@ -20,6 +22,8 @@ body{
   margin: 0 10%;
   background-color: #FFFFFF;
   height: 75vh;
+  height: calc(100vh - 200px); /* Adjust the value as needed to fit your design */
+  overflow-y: auto; /* Add scrollbars when the content exceeds the height */
 }
 
 .store-dropdown-container{
@@ -47,6 +51,11 @@ html{
 .store-name{
   background-color: #A4D8FF;
 }
+
+.store-delete{
+  background-color: #A4D8FF;
+}
+
 
 
 

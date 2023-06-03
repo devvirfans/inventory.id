@@ -165,7 +165,7 @@ mysqli_close($connection);
               class="profile-logo"
             />
             <a href="home.php" class="profile-text"><span>Home</span></a>
-            <span class="profile-text02"><span>Inventory</span></span>
+            <a href="inventory.php" class="profile-text02"><span>Inventory</span></a>
             <span class="profile-text04"><span>Profile</span></span>
             <a href="sign-in.php" class="profile-text06">
               <span>Log Out</span>

@@ -21,54 +21,55 @@ $query = "SELECT s.store_id, s.store_name, i.inventory_id, i.product_id, i.quant
           WHERE s.user_id = (SELECT user_id FROM users WHERE username = '$username')";
 $result = mysqli_query($connection, $query);
 
-// Check if the query was successful
 if ($result && mysqli_num_rows($result) > 0) {
     // Create an empty array to store the store data
     $stores = array();
 
     // Fetch store and product data
     // Fetch store and product data
-while ($row = mysqli_fetch_assoc($result)) {
-    $storeid = $row['store_id'];
-    $storename = $row['store_name'];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $storeid = $row['store_id'];
+        $storename = $row['store_name'];
 
-    // Check if the store exists in the stores array
-    if (!isset($stores[$storeid])) {
-        // Create an empty array for products of the current store
-        $stores[$storeid] = array(
-            'storename' => $storename,
-            'storeid' => $storeid, // Add store ID as an attribute
-            'products' => array()
-        );
+        // Check if the store exists in the stores array
+        if (!isset($stores[$storeid])) {
+            // Create an empty array for products of the current store
+            $stores[$storeid] = array(
+                'storename' => $storename,
+                'storeid' => $storeid, // Add store ID as an attribute
+                'products' => array()
+            );
+        }
+
+        // Check if the current row has product data
+        if ($row['product_id'] != null) {
+            $inventoryid = $row['inventory_id'];
+            $productid = $row['product_id'];
+            $quantity = $row['quantity'];
+            $productname = $row['product_name'];
+            $productprice = $row['product_price'];
+            $productdesc = $row['product_desc'];
+
+            // Add the product data to the products array of the current store
+            $stores[$storeid]['products'][] = array(
+                'inventoryid' => $inventoryid,
+                'productid' => $productid,
+                'quantity' => $quantity,
+                'productname' => $productname,
+                'productprice' => $productprice,
+                'productdesc' => $productdesc
+            );
+        }
     }
-
-    // Check if the current row has product data
-    if ($row['product_id'] != null) {
-        $inventoryid = $row['inventory_id'];
-        $productid = $row['product_id'];
-        $quantity = $row['quantity'];
-        $productname = $row['product_name'];
-        $productprice = $row['product_price'];
-        $productdesc = $row['product_desc'];
-
-        // Add the product data to the products array of the current store
-        $stores[$storeid]['products'][] = array(
-            'inventoryid' => $inventoryid,
-            'productid' => $productid,
-            'quantity' => $quantity,
-            'productname' => $productname,
-            'productprice' => $productprice,
-            'productdesc' => $productdesc
-        );
-    }
+} else {
+    // No inventory data found
+    $stores = array(); // Initialize $stores as an empty array
 }
 
-} else {
+
+if (empty($stores)) {
     echo "No inventory data found.";
 }
-
-
-// ...
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_item'])) {
     $storeId = $_POST['store_id'];
@@ -163,6 +164,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_item'])) {
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_store'])) {
+    $storeId = $_POST['store_id'];
+
+    // Check if the store_id exists in the store table
+    $checkStoreQuery = "SELECT * FROM store WHERE store_id = '$storeId'";
+    $checkStoreResult = mysqli_query($connection, $checkStoreQuery);
+
+    if (mysqli_num_rows($checkStoreResult) > 0) {
+        // Delete the store from the store table
+        $deleteStoreQuery = "DELETE FROM store WHERE store_id = '$storeId'";
+        $deleteStoreResult = mysqli_query($connection, $deleteStoreQuery);
+
+        if ($deleteStoreResult) {
+            // Store successfully deleted
+            // Redirect to the same page to refresh the store display
+            header('Location: inventory.php');
+            exit();
+        } else {
+            echo "Error deleting from store table: " . mysqli_error($connection);
+        }
+    } else {
+        echo "Invalid store_id: " . $storeId;
+    }
+}
+
+
 
 // Close the database connection
 mysqli_close($connection);
@@ -215,7 +242,7 @@ mysqli_close($connection);
             text-decoration: none;
             margin-right: 5px;
         }
-        
+        store1
         .dropdown-icon {
             margin-right: 5px;
         }
@@ -228,7 +255,12 @@ mysqli_close($connection);
         .add-item-form td {
             padding: 8px 0;
         }
-    </style>    <link
+        /* Updated styles */
+        .store-title-row {
+            width: 100%;
+        }
+</style>    
+    <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
       data-tag="font"
@@ -257,7 +289,7 @@ mysqli_close($connection);
             <a class="inventory-text" href="home.php"><span>Home</span></a>
             <a class="inventory-text2" href="inventory.php"><span>Inventory</span></a>
             <a class="inventory-text4" href="profile.php"><span>Profile</span></a>
-            <a class="inventory-text6" href="home.php"><span>Log Out</span></a>
+            <a class="inventory-text6" href="sign-in.php"><span>Log Out</span></a>
           </div>
         </div>
     </div>
@@ -278,6 +310,12 @@ mysqli_close($connection);
             <td class="store-name" onclick="toggleDropdown('store<?php echo $storeid; ?>')">
                 <span class="dropdown-icon">▼</span>
                 <?php echo $store['storename']; ?>
+            </td>
+            <td class="store-delete">
+                <form method="POST" action="">
+                    <input type="hidden" name="store_id" value="<?php echo $storeid; ?>">
+                    <input type="submit" value="Delete" name="delete_store">
+                </form>
             </td>
         </tr>
         <tr class="store-dropdown">
@@ -371,7 +409,7 @@ mysqli_close($connection);
     }
     function showAddStoreForm() {
     var form = document.getElementById('add-store-form');
-    form.style.display = 'table-row';
+    form.style.display = 'table';
 }
 
 </script>
